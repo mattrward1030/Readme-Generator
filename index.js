@@ -14,11 +14,23 @@ const questions = [
         type: 'input',
         message: 'What is the title of your project?',
         name: 'title',
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("Need to enter a title!")
+            }
+            return true;
+        }
     },
     {
         type: 'input',
         message: 'write a short description of your project',
         name: "description",
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("Need to have a description!")
+            }
+            return true;
+        }
 
     },
     {
@@ -46,9 +58,11 @@ const questions = [
 
     {
         type: 'input',
-        message: 'Names of other contributors',
-        name: "contributors",
+        message: 'Enter github username ',
+        name: "username",
     },
+
+
 
     {
         type: 'input',

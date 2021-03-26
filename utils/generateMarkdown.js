@@ -16,7 +16,7 @@ ${data.licenseBadge}
   ${data.description}
 
   ## Table of Contents
-  
+
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -43,7 +43,7 @@ ${data.licenseBadge}
  
 ## Contributing
 
-  ${data.contributors}
+do a pull request at github.com/${data.username}  if you want to work on this project!
 
   ## Tests
    
