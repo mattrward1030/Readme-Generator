@@ -58,8 +58,8 @@ const questions = [
 
     {
         type: 'input',
-        message: 'Enter github username ',
-        name: "username",
+        message: 'Enter anyone who contributed to this project',
+        name: "contributors",
     },
 
 
@@ -73,6 +73,11 @@ const questions = [
         type: 'input',
         message: 'Enter email that you can be reached for questions',
         name: "email",
+    },
+    {
+        type: 'input',
+        message: 'Enter github username ',
+        name: "username",
     },
 
 

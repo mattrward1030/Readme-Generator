@@ -11,11 +11,11 @@ function generateMarkdown(data) {
 
 ${data.licenseBadge}
 
-  ## Description
+## Description
 
   ${data.description}
 
-  ## Table of Contents
+## Table of Contents
 
 - [Description](#description)
 - [Installation](#installation)
@@ -26,32 +26,33 @@ ${data.licenseBadge}
 - [Tests](#tests)
 - [Questions](#questions)
 
-  ## Installation
+## Installation
 
   ${data.installation}
 
-  ## Usage
+## Usage
 
   ${data.usage}
 
-  ## License
+## License
 
   I am usng the ${data.license} license
 
-  ## Features
+## Features
  ${data.features}
  
 ## Contributing
 
-do a pull request at github.com/${data.username}  if you want to work on this project!
+${data.contributors}
 
-  ## Tests
+## Tests
    
   ${data.tests}
 
 ## Questions
 
  If you have questions contact me at ${data.email}.
+ Do a pull request at github.com/${data.username}  if you want to work on this project!
   `;
 }
 
