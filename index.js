@@ -4,10 +4,10 @@ const fs = require('fs');
 const util = require("util")
 const generateReadMe = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
-
+// using async function along with util.promisify to convert callback function to a promise one
 const writeFileAsync = util.promisify(fs.writeFile)
 
-
+// defining questions that the user will answer
 const questions = [
 
     {
@@ -82,15 +82,16 @@ const questions = [
 
 
 ]
-
+// setting variable for askUser which is running the inquirer prompt
 const askUser = () => {
     return inquirer.prompt(questions);
 }
+// defining writeToFile that has two parameters fileName and data
 const writeToFile = (fileName, data) => {
     return writeFileAsync(fileName, data);
 }
 
-// TODO: Create a function to initialize app
+// made variable to define init and using async with a implicit return
 const init = async () => {
     try {
         console.log("Answer the following questions to generate README");

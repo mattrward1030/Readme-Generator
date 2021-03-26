@@ -2,7 +2,7 @@
 
 ## Approach 
 
-To tackle this task of building a readme.md generator I had to first define a array of objects that would contain my questions. These questions would later be run using the npm dependency inqurier. That node module will run prompts to the user in the terminal that they can answer. The application then uses these answers to write a file named README.md in the demo folder. I also added the npm dependency util.promisify. What that does is converts a callback function to a promise based one. That turned out to be very helpful for me in this application. At the end of this project there was three .js files, badges.js, generateMarkdown.js and index.js. The main fucntions were written in index.js, the badges and their links were defined in the badges.js file so that file could be exported and used in the generateMarkdown.js file. The generateMarkdown.js file is the file that captured the answers and using template literals I could, for lack of a better word, append that info to the read me file when it was created. That file was also exported so it could be used in the index.js file. All of this came together to make this application run and generate a great, professional README.md file.
+To tackle this task of building a readme.md generator I had to first define a array of objects that would contain my questions. These questions would later be run using the npm dependency inqurier. That node module will run prompts to the user in the terminal that they can answer. The application then uses these answers to write a file named README.md in the demo folder. I also added the npm dependency util.promisify. What that does is converts a callback function to a promise based one. That turned out to be very helpful for me in this application. At the end of this project there was three .js files, badges.js, generateMarkdown.js and index.js. The main fucntions were written in index.js, the badges and their links were defined in the badges.js file so that file could be exported and used in the generateMarkdown.js file. The generateMarkdown.js file is the file that captured the answers and using template literals I could append that info to the read me file when it was created. That file was also exported so it could be used in the index.js file. All of this came together to make this application run and generate a great, professional README.md file.
 
 ## Installation
 
@@ -19,15 +19,15 @@ If you want to use this program, first do a git clone as previously described. O
 
 ## Features
 <ul>
-<li>A user can use this porgram to easily and quickly write a README.md file with minimal effort.</li>
+<li>A user can use this program to easily and quickly write a README.md file with minimal effort.</li>
 <li>Uses a command line to accept the user input.</li>
-<li>when the the data is entered in the command line a professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions .</li>
-<li>When the project title is entered then that is displayed ad the title of the README.</li>
+<li>When the the data is entered in the command line a professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions .</li>
+<li>When the project title is entered then that is displayed as the title of the README.</li>
 <li>When a user enters a description, installation instructions, usage information, contribution guidelines, and test instructions, then these are created as sections in the README file.</li>
-<li>If no title or description is entered by the user they are then met with a prompt telling them to enter information, if no information is entered the program will not continue to run.</li>
+<li>If no title or description is entered by the user they are then met with a prompt telling them to enter information, if no information is entered the program will not run.</li>
 <li>Whatever license the user chooses during the prompt is then used to make a badge that will appear at the top of the README.md file.</li>
 <li>When the user enters their github username and email this is then entered into the questions section of the README, with instructions on how they can be reached.</li>
-<li>When I click on the table of contents i am then taken to the corresponding section of the README.</li>
+<li>When I click on the table of contents I am then taken to the corresponding section of the README.</li>
 </ul>
 
 ## Tests
