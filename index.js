@@ -41,7 +41,7 @@ const questions = [
         type: 'checkbox',
         message: 'What feautures does your application have?',
         name: 'features',
-        choices: ["Has a index.html", "Has a CSS file", "Has a JavaScript file", "Uses jQuery", "Node.js installed", "Front end Only", "Back end only", "Front and back end application"]
+        choices: ["Has a index.html", " Has a CSS file", " Has a JavaScript file", " Uses jQuery", " Node.js installed", " Front end Only", " Back end only", " Front and back end application"]
     },
 
     {
