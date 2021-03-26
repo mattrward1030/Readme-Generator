@@ -27,7 +27,10 @@ ${data.licenseBadge}
 
   I am usng the ${data.license} license
 
-  ## Contributing
+  ## Features
+ ${data.features}
+ 
+## Contributing
 
   ${data.contributors}
 

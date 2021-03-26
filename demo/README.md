@@ -1,6 +1,6 @@
 # 
 
-  
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
@@ -17,9 +17,12 @@
 
   ## License
 
-  MIT
+  I am usng the MIT license
 
-  ## Contributing
+  ## Features
+ Has a index.html,Has a CSS file,Has a JavaScript file,Uses jQuery,Node.js installed,Front end Only
+ 
+## Contributing
 
   
 

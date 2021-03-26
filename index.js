@@ -38,6 +38,13 @@ const questions = [
         choices: ["MIT", "Mozilla Public License 2.0", "Apache 2.0", "Unlicense"]
     },
     {
+        type: 'checkbox',
+        message: 'What feautures does your application have?',
+        name: 'features',
+        choices: ["Has a index.html", "Has a CSS file", "Has a JavaScript file", "Uses jQuery", "Node.js installed", "Front end Only", "Back end only", "Front and back end application"]
+    },
+
+    {
         type: 'input',
         message: 'Names of other contributors',
         name: "contributors",
