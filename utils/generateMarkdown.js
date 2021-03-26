@@ -1,10 +1,15 @@
 
-
+const badgelinks = require("./badges")
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+
+  data.licenseBadge = badgelinks[data.license];
   // license is suppose to go at top
 
   return `# ${data.title}
+
+
+${data.licenseBadge}
 
   ## Description
 
@@ -20,7 +25,7 @@ function generateMarkdown(data) {
 
   ## License
 
-  ${data.license}
+  I am usng the ${data.license} license
 
   ## Contributing
 
@@ -30,9 +35,9 @@ function generateMarkdown(data) {
    
   ${data.tests}
 
-##Questions
+## Questions
 
-If you have questions contact me at ${data.email}.
+ If you have questions contact me at ${data.email}.
   `;
 }
 

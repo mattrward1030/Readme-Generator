@@ -1,82 +1,86 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
+const util = require("util")
+const generateReadMe = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
-inquirer
-    .prompt([
 
-        {
-            type: 'input',
-            message: 'What is the title of your project?',
-            name: 'title',
-        },
-        {
-            type: 'input',
-            message: 'write a short description of your project',
-            name: "description",
-
-        },
-        {
-            type: 'input',
-            message: 'How to install your application?',
-            name: "installation",
-        },
-        {
-            type: 'input',
-            message: 'provide instructions and examples for use',
-            name: 'usage',
-        },
-        {
-            type: 'list',
-            message: 'What license do you want to use',
-            name: 'license',
-            choices: ["MIT", "Mozilla Public License 2.0", "Apache 2.0", "Unlicense"]
-        },
-        {
-            type: 'input',
-            message: 'Names of other contributors',
-            name: "contributors",
-        },
-
-        {
-            type: 'input',
-            message: 'instructions on how to test application?',
-            name: "tests",
-        },
-        {
-            type: 'input',
-            message: 'Enter email that you can be reached for questions',
-            name: "email",
-        },
+const writeFileAsync = util.promisify(fs.writeFile)
 
 
-    ])
+const questions = [
 
-    // console.log("questions")
+    {
+        type: 'input',
+        message: 'What is the title of your project?',
+        name: 'title',
+    },
+    {
+        type: 'input',
+        message: 'write a short description of your project',
+        name: "description",
+
+    },
+    {
+        type: 'input',
+        message: 'How to install your application?',
+        name: "installation",
+    },
+    {
+        type: 'input',
+        message: 'provide instructions and examples for use',
+        name: 'usage',
+    },
+    {
+        type: 'list',
+        message: 'What license do you want to use',
+        name: 'license',
+        choices: ["MIT", "Mozilla Public License 2.0", "Apache 2.0", "Unlicense"]
+    },
+    {
+        type: 'input',
+        message: 'Names of other contributors',
+        name: "contributors",
+    },
+
+    {
+        type: 'input',
+        message: 'instructions on how to test application?',
+        name: "tests",
+    },
+    {
+        type: 'input',
+        message: 'Enter email that you can be reached for questions',
+        name: "email",
+    },
 
 
-    .then((response) => {
-        console.log(response);
+]
 
-        const filename = README.md;
+const askUser = () => {
+    return inquirer.prompt(questions);
+}
+const writeToFile = (fileName, data) => {
+    return writeFileAsync(fileName, data);
+}
 
-        fs.appendFile(filename, JSON.stringify(response, null, "\t"), (err) =>
-            err ? console.error(err) : console.log("created file successfully")
-        )
-    });
+// TODO: Create a function to initialize app
+const init = async () => {
+    try {
+        console.log("Answer the following questions to generate README");
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//     fs.appendFile(README.md, JSON.stringify(response, null, "\t"), (err) =>
-//         err ? console.error(err) : console.log("created file successfully")
-//     )
-// }
-// console.log(writeToFile)
-// // TODO: Create a function to initialize app
-// function init() {
-//     generateMarkdown(data)
-//     writeToFile()
-// }
-// // Function call to initialize app
-// init();
+        const answers = await askUser();
+
+        const fileContent = generateReadMe(answers);
+
+        await writeToFile("./demo/README.md", fileContent);
+
+        console.log("read me created")
+    }
+    catch (err) {
+        console.error("Error, file not created!");
+        console.log(err);
+    }
+}
+// Function call to initialize app
+init();
